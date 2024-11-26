@@ -104,6 +104,50 @@ html p a:hover {
 	text-decoration: none;
 }
 
+.image-small {
+	width: 20px; /* Ajusta el tamaño según sea necesario */
+	height: 20px; /* Ajusta la altura según sea necesario */
+	margin-left: 10px; /* Espacio entre las imágenes */
+  }
+
+  .custom-section .text-center {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+  }
+  
+  .support-box {
+	border: 2px solid #1e1f26; /* Color del borde */
+	padding: 20px;
+	background-color: #f8f8f8; /* Color de fondo */
+	border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  /* Añadir espacio debajo del título "Sabemos dar soporte" */
+.custom-section h3 + .support-box {
+  margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+/* Reducir el espacio debajo de la caja "support-box" */
+.custom-section .support-box {
+  margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+/* Reducir el espacio entre secciones */
+.custom-section + .custom-section {
+  margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+  .support-box p {
+	margin-bottom: 15px;
+	font-size: 16px;
+	line-height: 1.5;
+  }
+  
+  .support-box p strong {
+	color: #1e1f26; /* Color del texto en negrita */
+  }
+
 /*
 * Typography
 */
@@ -842,8 +886,8 @@ a[href*='tel'], a[href*='mailto'] {
 }
 
 .team-classic-img img {
-	width: 100%;
-	height: 100%;
+	width: 370px;
+	height: 370px;
 	object-fit: cover;
 	transition: all ease .35s;
 }
@@ -1401,7 +1445,7 @@ img {
 	display: inline-block;
 	font-weight: 400;
 	font-style: normal;
-	speak: none;
+	
 	text-transform: none;
 }
 
@@ -2021,7 +2065,7 @@ input:-webkit-autofill ~ .form-validation {
 	background-color: transparent;
 	background-image: none;
 	border-radius: 0;
-	-webkit-appearance: none;
+	
 	transition: .3s ease-in-out;
 	border: 1px solid #f5f5f5;
 	border-top-width: 0;
@@ -2287,7 +2331,7 @@ textarea.form-input {
 
 .toggle-custom {
 	padding-left: 60px;
-	-webkit-appearance: none;
+	
 }
 
 .toggle-custom:checked ~ .checkbox-custom-dummy::after {
@@ -3627,7 +3671,7 @@ textarea.form-input {
 	letter-spacing: .1em;
 	font-size: 14px;
 	font-weight: 700;
-	vertical-align: middle;
+	/* vertical-align: middle; */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -3787,7 +3831,7 @@ textarea.form-input {
 
 .snackbars-right {
 	display: inline-block;
-	float: right;
+	/* float: right; */
 	text-transform: uppercase;
 }
 
@@ -4350,10 +4394,10 @@ html.boxed body {
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.blog-layout__aside {
+	/* .blog-layout__aside {
 		-moz-column-gap: 30px;
 		-webkit-column-gap: 30px;
-	}
+	} */
 	.blog-layout__aside-item {
 		display: inline-block;
 		width: 100%;
@@ -5987,7 +6031,7 @@ html.tablet .ui-to-top {
 	outline: none;
 	outline-offset: 0;
 	cursor: pointer;
-	-webkit-appearance: none;
+
 }
 
 .rd-navbar-search-toggle::-moz-focus-inner {
@@ -7676,7 +7720,7 @@ html.rd-navbar-fixed-linked .page {
 	outline: none;
 	outline-offset: 0;
 	cursor: pointer;
-	-webkit-appearance: none;
+
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -8367,7 +8411,7 @@ html.rd-navbar-fixed-linked .page {
 	position: relative;
 	-ms-touch-action: pan-Y;
 	touch-action: manipulation;
-	-moz-backface-visibility: hidden;
+
 	/* fix firefox animation glitch */
 }
 
@@ -8540,8 +8584,8 @@ html.rd-navbar-fixed-linked .page {
 	width: 10px;
 	height: 10px;
 	background: transparent;
-	display: block;
-	-webkit-backface-visibility: visible;
+	display: block; 
+	
 	transition: opacity 200ms ease;
 	border-radius: 5px;
 	border: 1px solid #888888;
@@ -8784,3 +8828,55 @@ html.rd-navbar-fixed-linked .page {
 	top: 24%;
 	left: 19.5%;
 }
+
+.card-flip {
+	perspective: 1000px;
+	margin-bottom: 200px;
+	position: relative;
+  }
+  
+  .card-flip .card-front,
+  .card-flip .card-back {
+	width: 100%;
+	height: 200px;
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	backface-visibility: hidden;
+	transition: transform 0.6s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	box-sizing: border-box;
+  }
+  
+  .card-flip .card-front {
+	z-index: 2;
+  }
+  
+  .card-flip .card-back {
+	transform: rotateY(180deg);
+  }
+  
+  .card-flip:hover .card-front {
+	transform: rotateY(180deg);
+  }
+  
+  .card-flip:hover .card-back {
+	transform: rotateY(0deg);
+  }
+  .card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center; /* Centrar las tarjetas en la fila */
+  }
+  
+  .card-container .col-md-4 {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px; /* Ajustar el margen inferior */
+  }
