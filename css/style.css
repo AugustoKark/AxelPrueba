@@ -5111,6 +5111,11 @@ html [class*='section-'].section-bottom-0 {
 	position: relative;
 	background-color: #536b98;
 }
+@media (max-width: 767.98px) {
+	.decor-text {
+	  display: none;
+	}
+  }
 
 @media (min-width: 992px) {
 	.section-intro {
